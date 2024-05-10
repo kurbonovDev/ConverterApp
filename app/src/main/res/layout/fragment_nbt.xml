@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    tools:context=".nbt.NbtFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:text="Курсы НБТ"
+            android:textColor="#212121"
+            android:textFontWeight="700"
+            android:textSize="22sp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="17dp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/block_rcView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcViewNbt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/nbt_item" />
+
+    </androidx.cardview.widget.CardView>
+
+        <ProgressBar
+            android:id="@+id/load_progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/block_rcView"
+            app:layout_constraintEnd_toEndOf="@+id/block_rcView"
+            app:layout_constraintStart_toStartOf="@+id/block_rcView"
+            app:layout_constraintTop_toTopOf="@+id/block_rcView" />
+
+    <ImageView
+        android:id="@+id/error_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/no_data_image"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/block_rcView"
+        app:layout_constraintEnd_toEndOf="@+id/block_rcView"
+        app:layout_constraintStart_toStartOf="@+id/block_rcView"
+        app:layout_constraintTop_toTopOf="@+id/block_rcView" />
+
+    <TextView
+        android:id="@+id/error_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/error_image" />
+
+    <Button
+        android:id="@+id/bnt_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Попробуйте заново"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/error_image"
+        app:layout_constraintStart_toStartOf="@+id/error_image"
+        app:layout_constraintTop_toBottomOf="@+id/error_text" />
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

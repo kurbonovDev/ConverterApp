@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#F5F5F5"
+    android:layout_height="match_parent"
+    tools:context=".exchanger.ExchangerFragment">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/exchanger_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Обменники"
+            android:textColor="#212121"
+            android:textFontWeight="700"
+            android:textSize="22sp" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <ProgressBar
+        android:id="@+id/load_progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/rcViewExchanger"
+        app:layout_constraintEnd_toEndOf="@+id/rcViewExchanger"
+        app:layout_constraintStart_toStartOf="@+id/rcViewExchanger"
+        app:layout_constraintTop_toTopOf="@+id/rcViewExchanger" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcViewExchanger"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exchanger_toolbar"
+        tools:listitem="@layout/exchanger_item" />
+
+    <ImageView
+        android:id="@+id/error_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/no_data_image"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/rcViewExchanger"
+        app:layout_constraintEnd_toEndOf="@+id/rcViewExchanger"
+        app:layout_constraintStart_toStartOf="@+id/rcViewExchanger"
+        app:layout_constraintTop_toTopOf="@+id/rcViewExchanger" />
+
+    <TextView
+        android:id="@+id/error_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/error_image" />
+
+    <Button
+        android:id="@+id/bnt_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Попробуйте заново"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/error_image"
+        app:layout_constraintStart_toStartOf="@+id/error_image"
+        app:layout_constraintTop_toBottomOf="@+id/error_text" />
+</androidx.constraintlayout.widget.ConstraintLayout>
